@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+.container .card-header {
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=style.css.map */
