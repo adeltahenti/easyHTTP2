@@ -1,82 +1,45 @@
-const http = new easyHTTP();
+const http = new EasyHTTP();
 
-// Get Posts
-// http.get('https://jsonplaceholder.typicode.com/posts', function (err, posts) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(posts);
-//     const postsList = JSON.parse(posts);
+// Get Users
+// http.get('https://jsonplaceholder.typicode.com/users')
+//   .then(data => {
+//     console.log(data);
 //     let output = '';
-//     postsList.forEach(post => {
+//     data.forEach(user => {
 //       output += `
-//       <li class="list-group-item">
-//         <ul class="list-group">
-//           <li class="list-group-item"><strong>User Id: </strong>${post.userId}</li>
-//           <li class="list-group-item"><strong>Post Id: </strong>${post.id}</li>
-//           <li class="list-group-item" style="background:rgb(255, 150, 101);"><strong>Title: </strong>${post.title}</li>
-//           <li class="list-group-item"><strong>Body: </strong>${post.body}</li>
-//         </ul>
-//       </li>
+//         <li class="list-group-item">
+//           <ul class="list-group">
+//             <li class="list-group-item"><strong>Id : </strong>${user.id}</li>
+//             <li class="list-group-item bg-light"><strong>Name : </strong>${user.name}</li>
+//             <li class="list-group-item"><strong>Username : </strong>${user.username}</li>
+//             <li class="list-group-item"><strong>Email : </strong>${user.email}</li>
+//           </ul>
+//         </li>
 //       `;
 //     });
 
 //     document.getElementById('output').innerHTML = output;
-//   }
-// });
+//   })
+//   .catch(err => console.log(err));
 
-// Get Single Post
-// http.get('https://jsonplaceholder.typicode.com/posts/1', function (err, post) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(post);
-//     const input = JSON.parse(post);
-//     const output = `
-//       <li class="list-group-item">
-//         <ul class="list-group">
-//           <li class="list-group-item"><strong>User Id: </strong>${input.userId}</li>
-//           <li class="list-group-item"><strong>Post Id: </strong>${input.id}</li>
-//           <li class="list-group-item" style="background:rgb(255, 150, 101);"><strong>Title: </strong>${input.title}</li>
-//           <li class="list-group-item"><strong>Body: </strong>${input.body}</li>
-//         </ul>
-//       </li>
-//     `;
-
-//     document.getElementById('output').innerHTML = output;
-//   }
-// });
-
-// Post Request
-// Create data
+// User data
 const data = {
-  userId: 101,
-  title: 'Custom Post',
-  body: 'This is a custom post'
+  name: 'John Doe',
+  username: 'johndoe',
+  email: 'jdoe@gmail.com'
 }
-// Create Post
-// http.post('https://jsonplaceholder.typicode.com/posts', data, function (err, post) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(post);
-//   }
-// });
 
-// Put Request
-// http.put('https://jsonplaceholder.typicode.com/posts/1', data, function (err, post) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(post);
-//   }
-// });
+// Create User
+// http.post('https://jsonplaceholder.typicode.com/users', data)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
 
-// Delete Request
-http.delete('https://jsonplaceholder.typicode.com/posts/1', function (err, response) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(response);
-  }
-});
+// Update User
+// http.put('https://jsonplaceholder.typicode.com/users/2', data)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
+
+// Delete User
+http.delete('https://jsonplaceholder.typicode.com/users/2')
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
